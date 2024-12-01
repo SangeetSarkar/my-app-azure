@@ -1,7 +1,11 @@
-// Get the current date
-const currentDate = new Date().toLocaleString();
+const express = require("express");
+const app = express();
+const port = 3000;
 
-// Display the date in the <p> element with id "date"
-document.getElementById(
-  "date"
-).innerText = `Current Date and Time: ${currentDate}`;
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
